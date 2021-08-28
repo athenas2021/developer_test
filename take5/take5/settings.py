@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qdcj8u1#x$he&y6zb6v659p$a3k)$&sc9y=ya9q1jodoy%a5ab'
+SECRET_KEY = 'django-insecure-r!6b307o8=9l-9+11$v3z0-jw#1^q4io&gn8&^zst1a_v*3aru'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,17 +76,9 @@ WSGI_APPLICATION = 'take5.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'take5db',
-        'USER': 'sa',
-        'PASSWORD': 'sadev',
-        'HOST': 'DESKTOP-TCFGSU0\SQLEXPRESS',
-        'PORT': '',
-
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
