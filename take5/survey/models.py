@@ -11,7 +11,6 @@ class SurveyQuestionAlternative(models.Model):
     question = models.ForeignKey(SurveyQuestion, on_delete=models.CASCADE)
     questionAlternativeText =  models.CharField(max_length=255)
     questionAlternative = models.CharField(max_length=1)
-    rightAlternative = models.BooleanField()
     def __str__(self):
         return self.questionAlternativeText
 
