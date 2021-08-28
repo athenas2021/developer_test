@@ -1,0 +1,13 @@
+{% extends "survey/base.html" %}
+
+{% block title %} Pesquisas (Surveys) {% endblock %}
+
+{% block content %}
+    {% for survey in survey_list %}
+        <article>
+            <h2>{{ survey.surveyText }}</h2>
+            <h2>{{ survey.surveyQuestions }}</h2>
+
+        <article>
+    {% endfor %}
+{% endblock %}
