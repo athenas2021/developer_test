@@ -15,4 +15,3 @@ class SurveyQuestionAdmin(admin.ModelAdmin):
 class SurveyQuestionAlternativeAdmin(admin.ModelAdmin):
     list_display = ("questionAlternativeText",)
 
-# Register your models here.
