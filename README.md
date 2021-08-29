@@ -1,3 +1,26 @@
+
+# Take5 - Surveys
+Instruçoes basicas de como instalar e rodar a aplicaçao.
+
+## Como rodar:
+Após clonar o projeto, na pasta:
+* python manage.py runserver
+
+## Criar um novo super usuário:
+* python manage.py createsuperuser
+
+## Rotas (Endpoints)
+- /admin = Painel Adminitrador Django
+- /survey = Simples View para listagem das pesquisas
+
+- / = API Rest Home
+- /users = API Rest Usuários
+- /surveys = API Rest Pesquisas
+- /surveyQuestions =  API Rest questoes
+- /SurveyQuestionsAlternatives = API Rest alternativas
+
+
+
 # Take5 - Contratação Desenvolvedor Back-end
 Olá, este é o teste para contratação de um desenvolvedor Back-end
 
