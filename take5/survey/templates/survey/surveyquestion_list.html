@@ -3,11 +3,10 @@
 {% block title %} Pesquisas (Surveys) {% endblock %}
 
 {% block content %}
-    {% for survey in survey_list %}
+    {% for survey in surveyquestion_list %}
         <article>
-            <h2>{{ survey.surveyText }}</h2>
-            <h2>{{ survey.surveyQuestions }}</h2>
-
+            <h2>{{ survey.questionText }}</h2>          
+        
         <article>
     {% endfor %}
 {% endblock %}

@@ -7,21 +7,23 @@ from rest_framework.validators import UniqueValidator
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email', 'groups']
+        fields = ['url', 'username', ]
 
 
-class SurveyQuestionSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = SurveyQuestion
-        fields = ['questionText', 'questionAuthor']
-
-class SurveyQuestionAlternativeSerializer(serializers.HyperlinkedModelSerializer):
+class SurveyQuestionAlternativeSerializer(serializers.ModelSerializer):
     class Meta:
         model = SurveyQuestionAlternative
         fields = ['question', 'questionAlternativeText','questionAlternative']
 
 
-class SurveySerializer(serializers.HyperlinkedModelSerializer):    
+class SurveyQuestionSerializer(serializers.ModelSerializer):
+    alternatives = SurveyQuestionAlternativeSerializer(many=True, read_only=True)
+    class Meta:
+        model = SurveyQuestion
+        fields = ['questionText','survey','alternatives']
+
+class SurveySerializer(serializers.ModelSerializer):   
+    questions = SurveyQuestionSerializer(many=True, read_only=True) 
     class Meta:
         model = Survey
-        fields = ('surveyText', 'surveyQuestions')
+        fields = ('surveyText', 'surveyAuthor', 'questions')
